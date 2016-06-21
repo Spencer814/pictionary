@@ -219,10 +219,6 @@ h3 {
     background: #000000;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 html {
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
@@ -328,7 +324,7 @@ ul {
   text-align: center;
 }
 
- Messages 
+ /*Messages */
 
 .gameArea {
   height: 100%;
@@ -352,20 +348,6 @@ ul {
   padding-right: 15px;
   text-align: right;
 }
-
-/* Input */
-
-/*.inputGuess {*/
-/*  border: 10px solid #000;*/
-/*  bottom: 0;*/
-/*  height: 60px;*/
-/*  left: 0;*/
-/*  outline: none;*/
-/*  padding-left: 10px;*/
-/*  position: absolute;*/
-/*  right: 0;*/
-/*  width: 100%;*/
-/*}*/
 
 @media only screen and (max-width: 2560px) and (min-width: 1025px) {
     #canvas {
