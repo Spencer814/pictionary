@@ -10,7 +10,7 @@
     <ul class="pages">
         <li class="login page">
             <div class="form">
-                <h3 class="title">What's your nickname?</h3>
+                <h3 class="title">Enter your Username</h3>
                 <input class="usernameInput" type="text" maxlength="14" />
             </div>
         </li>
@@ -94,10 +94,13 @@
                         <div class="panel-body" id="main">
                             <canvas id="canvas" class="easel"></canvas>
                         </div>
-                        <div class="list-group-item-info guess-box">
-                            <h3>Welcome to Pictionary</h3>
-                        </div>
-                        <div class="list-group" id="guesses">
+                        <div class="panel-body gameArea" id="main">
+                            <div class="list-group-item-info guess-box">
+                                <h3>Welcome to Pictionary</h3>
+                            </div>
+                            <div class="list-group" id="guesses">
+                                <ul class="guesses"></ul>
+                            </div>
                         </div>
                         <div class="panel-footer" id="guess-input">
                             <div class="input-group" id="guess">

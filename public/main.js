@@ -83,9 +83,6 @@ function widen(obj) {
     }
 }
 
-
-
-
 function sketch() {
     this.canvas = $('#canvas');
     this.context = this.canvas[0].getContext('2d');
@@ -284,8 +281,8 @@ $(function() {
   // Initialize variables
   var $window = $(window);
   var $usernameInput = $('.usernameInput'); // Input for username
-  var $guesses = $('#guesses'); // Messages area
-  var $inputGuess = $('.inputGuess'); // Input message input box
+  var $guesses = $('.guesses'); // Messages area
+  var $inputGuess = $('#guess input'); // Input message input box
 
   var $loginPage = $('.login.page'); // The login page
   var $gamePage = $('.game.page'); // The gameroom page
@@ -351,13 +348,13 @@ $(function() {
   function addGameMessage (data, options) {
     options = options || {};
 
-    var $usernameDiv = $('<span class="list-group-item list-group-item-warning give"/>')
+    var $usernameDiv = $('<span class="username"/>')
       .text(data.username)
       .css('color', getUsernameColor(data.username));
-    var $messageBodyDiv = $('<span class="list-group-item list-group-item-warning give"/>')
+    var $messageBodyDiv = $('<span class="messageBody">')
       .text(data.message);
 
-    var $messageDiv = $('<span class="list-group-item list-group-item-success give"/>')
+    var $messageDiv = $('<li class="message"/>')
       .data('username', data.username)
       .append($usernameDiv, $messageBodyDiv);
 

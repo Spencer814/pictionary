@@ -36,8 +36,8 @@ io.on('connection', function(socket) {
             username: socket.username,
             numUsers: numUsers
         });
+    console.log('A new user has connected: ', username);
     });
-    console.log('A new user has connected');
     
       // when the client emits 'typing', we broadcast it to others
   socket.on('typing', function () {
@@ -71,7 +71,7 @@ io.on('connection', function(socket) {
       console.log('Guess: ', guessed);
     });
     
-    socket.on('disconnect', function(leave) {
+    socket.on('disconnect', function(leave, username) {
         if (addedUser) {
             numUsers--;
             socket.broadcast.emit('user left', {
@@ -80,6 +80,6 @@ io.on('connection', function(socket) {
             });
         }
         socket.broadcast.emit('leave', leave);
-        console.log('A user has disconnected');
+        console.log('A user has disconnected: ', username);
     });
 });

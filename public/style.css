@@ -131,7 +131,9 @@ h3 {
 .status {
     text-align: center;
     font-style: italic;
-    border: 1px solid #31708f;
+    border-style: solid;
+    border-color: #31708f;
+    border-width: 1px 0 2px 0;
 }
 
 .intro {
@@ -147,10 +149,15 @@ h3 {
 
 .panel-footer {
     padding: 2em;
+    border-top: 1px solid #b3b3b3;
 }
 
 .input-group-btn:last-child > .btn {
     text-shadow: 1px 1px 1px #000000;
+}
+
+#guesses.list-group {
+    margin-bottom: 0;
 }
 
 #top-message {
@@ -165,6 +172,10 @@ h3 {
     display: block;
     margin: 0 auto;
     box-shadow: 0px 2px 10px 1px #888888;
+}
+
+.input-group .form-control:first-child {
+    box-shadow: inset 0px 0px 5px -1px #696969, 0px 2px 10px -1px #1A3B4C;
 }
 
 .full-spectrum .sp-palette {
@@ -271,7 +282,6 @@ ul {
   height: 100px;
   margin-top: -100px;
   position: absolute;
-
   text-align: center;
   top: 50%;
   width: 100%;
@@ -328,14 +338,14 @@ ul {
 
 .gameArea {
   height: 100%;
-  padding-bottom: 60px;
+  padding: 0;
 }
 
 .guesses {
   height: 100%;
   margin: 0;
   overflow-y: scroll;
-  padding: 10px 20px 10px 20px;
+  /*padding: 10px 20px 10px 20px;*/
 }
 
 .message.typing .messageBody {
