@@ -1,123 +1,123 @@
 <!DOCTYPE html>
 <title>Pictionary</title>
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  </head>
+  <body>
     <ul class="pages">
-        <li class="login page">
-            <div class="form">
-                <h3 class="title">Enter your Username</h3>
-                <input class="usernameInput" type="text" maxlength="14" />
-            </div>
-        </li>
-        <li class="game page">
-            <div class="container">
-                <div class="jumbotron">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h1 class="panel-title">Pictionary</h1>
-                            <div class="btn-group pull-right">
-                                <button type="button" class="btn btn-info btn-xs dropdown-toggle" data-toggle="dropdown">
-                                    <span class="glyphicon glyphicon-chevron-down" id="switch"></span>
-                                </button>
-                                <ul class="dropdown-menu slidedown">
-                                    <li><a data-toggle="collapse" href="#wordView" aria-expanded="false" aria-controls="wordView"><span class="glyphicon glyphicon-plus glyph"></span><span id="newword" class="drop">New Game</span></a></li>
-                                    <li class="divider"></li>
-                                    <li><a data-toggle="collapse" href="#drawOptions" aria-expanded="false" aria-controls="drawOptions"><span class="glyphicon glyphicon-pencil glyph"></span><span id="draw" class="drop">Draw</span></a></li>
-                                    <li><a href="#"><span class="glyphicon glyphicon-refresh glyph"></span><span id="clear" class="drop">Clear</span></a></li>
-                                    <li><a href="#"><span class="glyphicon glyphicon-send glyph"></span><span id="done" class="down">Submit</span></a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#"><span class="glyphicon glyphicon-remove glyph"></span><span id="exit" class="drop">Leave Game</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="collapse" id="wordView">
-                            <div class="well well-top">
-                                <div class="list-group-item-info wordbox" id="word">
-                                    <h3>Your word is:</h3>
-                                </div>
-                                <div class="list-group words" id="words"></div>
-                            </div>
-                        </div>
-                        <div class="collapse" id="drawOptions">
-                            <div class="well">
-                                <div class="btn-group color-menu">
-                                    <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
-                                        <span class="glyphicon glyphicon-tint glyph"></span>
-                                        <span id="color" class="down">Color</span>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li id="red" onclick="color(this)"><a href="#"><span class="glyph" id="red-ink"></span><span class="drop">Red</span></a></li>
-                                        <li id="orange" onclick="color(this)"><a href="#"><span class="glyph" id="orange-ink"></span><span class="drop">Orange</span></a></li>
-                                        <li id="yellow" onclick="color(this)"><a href="#"><span class="glyph" id="yellow-ink"></span><span class="drop">Yellow</span></a></li>
-                                        <li id="green" onclick="color(this)"><a href="#"><span class="glyph" id="green-ink"></span><span class="drop">Green</span></a></li>
-                                        <li id="blue" onclick="color(this)"><a href="#"><span class="glyph" id="blue-ink"></span><span class="drop">Blue</span></a></li>
-                                        <li id="indigo" onclick="color(this)"><a href="#"><span class="glyph" id="indigo-ink"></span><span class="drop">Indigo</span></a></li>
-                                        <li id="violet" onclick="color(this)"><a href="#"><span class="glyph" id="violet-ink"></span><span class="drop">Violet</span></a></li>
-                                        <li id="black" onclick="color(this)"><a href="#"><span class="glyph" id="black-ink"></span><span class="drop">Black</span></a></li>
-                                    </ul>
-                                </div>
-                                <div class="btn-group width-menu">
-                                    <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
-                                        <span class="glyphicon glyphicon-resize-horizontal squeeze-left"></span>
-                                        <span class="wedge"></span>
-                                        <span id="widen" class="squeeze-right">Width</span>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li id="one" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">1</span></a></li>
-                                        <li id="three" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">3</span></a></li>
-                                        <li id="five" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">5</span></a></li>
-                                        <li id="ten" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">10</span></a></li>
-                                        <li id="fifth" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">15</span></a></li>
-                                    </ul>
-                                </div>
-                                <div class="btn-group width-menu" id="white" onclick="color(this)">
-                                    <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
-                                        <span class="glyphicon glyphicon-erase glyph"></span>
-                                        <span id="widen" class="down">Erase</span>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li id="one" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">1</span></a></li>
-                                        <li id="three" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">3</span></a></li>
-                                        <li id="five" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">5</span></a></li>
-                                        <li id="ten" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">10</span></a></li>
-                                        <li id="fifth" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">15</span></a></li>
-                                        <li id="twenty" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">20</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel-body" id="main">
-                            <canvas id="canvas" class="easel"></canvas>
-                        </div>
-                        <div class="panel-body gameArea" id="main">
-                            <div class="list-group-item-info guess-box">
-                                <h3>Welcome to Pictionary</h3>
-                            </div>
-                            <div class="list-group" id="guesses">
-                                <ul class="guesses"></ul>
-                            </div>
-                        </div>
-                        <div class="panel-footer" id="guess-input">
-                            <div class="input-group" id="guess">
-                                <input id="btn-input" type="text" class="form-control input-sm inputGuess" placeholder="Submit your guess here..." />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-primary btn-sm" id="btn-guess">Send</button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+      <li class="login page">
+        <div class="form">
+          <h3 class="title">Enter your Username</h3>
+          <input class="usernameInput" type="text" maxlength="14" />
+        </div>
+      </li>
+      <li class="game page">
+        <div class="container">
+          <div class="jumbotron">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h1 class="panel-title">Pictionary</h1>
+                <div class="btn-group pull-right">
+                  <button type="button" class="btn btn-info btn-xs dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-chevron-down" id="switch"></span>
+                  </button>
+                  <ul class="dropdown-menu slidedown">
+                    <li><a data-toggle="collapse" href="#wordView" aria-expanded="false" aria-controls="wordView"><span class="glyphicon glyphicon-plus glyph"></span><span id="newword" class="drop">New Game</span></a></li>
+                    <li class="divider"></li>
+                    <li><a data-toggle="collapse" href="#drawOptions" aria-expanded="false" aria-controls="drawOptions"><span class="glyphicon glyphicon-pencil glyph"></span><span id="draw" class="drop">Draw</span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-refresh glyph"></span><span id="clear" class="drop">Clear</span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-send glyph"></span><span id="done" class="down">Submit</span></a></li>
+                    <li class="divider"></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-remove glyph"></span><span id="exit" class="drop">Leave Game</span></a></li>
+                  </ul>
                 </div>
+              </div>
+              <div class="collapse" id="wordView">
+                <div class="well well-top">
+                  <div class="list-group-item-info wordbox" id="word">
+                    <h3>Your word is:</h3>
+                  </div>
+                  <div class="list-group words" id="words"></div>
+                </div>
+              </div>
+              <div class="collapse" id="drawOptions">
+                <div class="well">
+                  <div class="btn-group color-menu">
+                    <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
+                      <span class="glyphicon glyphicon-tint glyph"></span>
+                      <span id="color" class="down">Color</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li id="red" onclick="color(this)"><a href="#"><span class="glyph" id="red-ink"></span><span class="drop">Red</span></a></li>
+                      <li id="orange" onclick="color(this)"><a href="#"><span class="glyph" id="orange-ink"></span><span class="drop">Orange</span></a></li>
+                      <li id="yellow" onclick="color(this)"><a href="#"><span class="glyph" id="yellow-ink"></span><span class="drop">Yellow</span></a></li>
+                      <li id="green" onclick="color(this)"><a href="#"><span class="glyph" id="green-ink"></span><span class="drop">Green</span></a></li>
+                      <li id="blue" onclick="color(this)"><a href="#"><span class="glyph" id="blue-ink"></span><span class="drop">Blue</span></a></li>
+                      <li id="indigo" onclick="color(this)"><a href="#"><span class="glyph" id="indigo-ink"></span><span class="drop">Indigo</span></a></li>
+                      <li id="violet" onclick="color(this)"><a href="#"><span class="glyph" id="violet-ink"></span><span class="drop">Violet</span></a></li>
+                      <li id="black" onclick="color(this)"><a href="#"><span class="glyph" id="black-ink"></span><span class="drop">Black</span></a></li>
+                    </ul>
+                  </div>
+                  <div class="btn-group width-menu">
+                    <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
+                      <span class="glyphicon glyphicon-resize-horizontal squeeze-left"></span>
+                      <span class="wedge"></span>
+                      <span id="widen" class="squeeze-right">Width</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li id="one" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">1</span></a></li>
+                      <li id="three" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">3</span></a></li>
+                      <li id="five" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">5</span></a></li>
+                      <li id="ten" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">10</span></a></li>
+                      <li id="fifth" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">15</span></a></li>
+                    </ul>
+                  </div>
+                  <div class="btn-group width-menu" id="white" onclick="color(this)">
+                    <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
+                      <span class="glyphicon glyphicon-erase glyph"></span>
+                      <span id="widen" class="down">Erase</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li id="one" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">1</span></a></li>
+                      <li id="three" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">3</span></a></li>
+                      <li id="five" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">5</span></a></li>
+                      <li id="ten" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">10</span></a></li>
+                      <li id="fifth" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">15</span></a></li>
+                      <li id="twenty" onclick="widen(this)"><a href="#"><span id="glyph"></span><span class="drop">20</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-body" id="main">
+                <canvas id="canvas" class="easel"></canvas>
+              </div>
+              <div class="panel-body gameArea" id="main">
+                <div class="list-group-item-info guess-box">
+                  <h3>Welcome to Pictionary</h3>
+                </div>
+                <div class="list-group" id="guesses">
+                  <ul class="guesses"></ul>
+                </div>
+              </div>
+              <div class="panel-footer" id="guess-input">
+                <div class="input-group" id="guess">
+                  <input id="btn-input" type="text" class="form-control input-sm inputGuess" placeholder="Submit your guess here..." />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary btn-sm" id="btn-guess">Send</button>
+                  </span>
+                </div>
+              </div>
             </div>
-        </li>
+          </div>
+        </div>
+      </li> 
     </ul>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
