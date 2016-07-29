@@ -30,7 +30,7 @@ var words = [
 $('.btn-group.pull-right').click(function() {
     if ($('#switch').hasClass('glyphicon-chevron-down')) {
         $('#switch').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
-    } else if ($('#switch').hasClass('glyphicon-chevron-up')) {
+    } else {
         $('#switch').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
     }
 });
@@ -38,7 +38,7 @@ $('.btn-group.pull-right').click(function() {
 $('.btn-group.pull-right').children('li').click(function() {
     if ($('#switch').hasClass('glyphicon-chevron-up')) {
         $('#switch').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
-    } else if ($('#switch').hasClass('glyphicon-chevron-down')) {
+    } else {
         $('#switch').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
     }
 });
