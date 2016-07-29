@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -59,6 +59,7 @@
                       <li id="indigo" onclick="color(this)"><a href="#"><span class="glyph" id="indigo-ink"></span><span class="drop">Indigo</span></a></li>
                       <li id="violet" onclick="color(this)"><a href="#"><span class="glyph" id="violet-ink"></span><span class="drop">Violet</span></a></li>
                       <li id="black" onclick="color(this)"><a href="#"><span class="glyph" id="black-ink"></span><span class="drop">Black</span></a></li>
+                      <li id="{{this.color}}" onclick="color(this)"><a href="#"><span class="glyph" id="{{this.color}}-ink"></span><span class="drop">{{this.color}}</span></a></li>
                     </ul>
                   </div>
                   <div class="btn-group width-menu">
@@ -115,8 +116,8 @@
         </div>
       </li> 
     </ul>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="main.js"></script>
   </body>
