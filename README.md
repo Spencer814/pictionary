@@ -12,13 +12,11 @@ The project started out as a messenger but I incorporated the colloborative canv
 - *add Angular*
 - *toggle user control*
 - *create rooms for private messages*
-- *build upon Node and Express*
-- *set up backend outside of IDE*
 
 **Code**
 https://github.com/Spencer814/pictionary
     
 **Demo**
-https://ide.c9.io/spencer814/pictionary
+https://spencer814.github.io/pictionary
 
 # pictionary
