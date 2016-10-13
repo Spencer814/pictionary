@@ -17,6 +17,6 @@ The project started out as a messenger but I incorporated the colloborative canv
 https://github.com/Spencer814/pictionary
     
 **Demo**
-https://spencer814.github.io/pictionary/public
+https://dry-oasis-88674.herokuapp.com/
 
 # pictionary
