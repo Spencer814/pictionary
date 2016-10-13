@@ -5,10 +5,17 @@ var http = require('http'),
     server = http.Server(app),
     io = socket_io(server);
     
-server.listen(8080);
+app.use(express.static(__dirname + '/public'));
+
+app.get('/*', function(req, res) { 
+  res.sendFile(__dirname + '/public/index.html');
+});
+
+server.listen(process.env.PORT || 1337, process.env.IP, function() {
+  console.log('Server running on 127.0.0.1:1337');
+});
 
 app.use(express.static(__dirname + '/public'));
-console.log('Server running on 127.0.0.1:8080');
 
 var numUsers = 0;
 
